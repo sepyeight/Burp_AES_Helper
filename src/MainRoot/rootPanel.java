@@ -43,6 +43,7 @@ public class rootPanel {
     private JLabel ivFormat;
     private JPanel algorithmSelect;
     private JCheckBox enableGlobal;
+    private JLabel info;
     private String cryptMethodText;
     private String inputEncryptModeText;
     private String outputEncryptModeText;
