@@ -88,11 +88,11 @@
               </model>
             </properties>
           </component>
-          <component id="9571d" class="javax.swing.JCheckBox" binding="enableGlobalRightClick">
+          <component id="9571d" class="javax.swing.JCheckBox" binding="enableGlobal">
             <constraints/>
             <properties>
               <selected value="false"/>
-              <text value="enableGlobalRightClick"/>
+              <text value="enableGlobal"/>
             </properties>
           </component>
         </children>

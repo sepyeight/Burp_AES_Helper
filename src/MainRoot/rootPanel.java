@@ -5,7 +5,6 @@ import burp.IBurpExtenderCallbacks;
 import com.alex.bean.AESBean;
 import com.alex.utils.AESUtils;
 import com.alex.utils.ConvertUtils;
-import com.google.gson.Gson;
 
 import javax.crypto.Cipher;
 import javax.swing.*;
@@ -43,7 +42,7 @@ public class rootPanel {
     private JEditorPane keyFormatText;
     private JLabel ivFormat;
     private JPanel algorithmSelect;
-    private JCheckBox enableGlobalRightClick;
+    private JCheckBox enableGlobal;
     private String cryptMethodText;
     private String inputEncryptModeText;
     private String outputEncryptModeText;
@@ -83,10 +82,10 @@ public class rootPanel {
             }
         });
 
-        enableGlobalRightClick.addActionListener(new ActionListener() {
+        enableGlobal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (enableGlobalRightClick.isSelected()) {
+                if (enableGlobal.isSelected()) {
                     getAlgorithmKeyAndIV();
                     getInputAndOutputFormat();
                     AESBean tempAESBean = createTempAESBean();
@@ -134,12 +133,11 @@ public class rootPanel {
                 doDecrypt();
             }
         });
-        enableGlobalRightClick.addActionListener(new ActionListener() {
+        enableGlobal.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (enableGlobalRightClick.isSelected()) {
-                    String jsonObject = new Gson().toJson(createTempAESBean());
-                    System.out.println(jsonObject);
+                if (enableGlobal.isSelected()) {
+                    createTempAESBean();
                 } else {
                     removeTempFile();
                 }
